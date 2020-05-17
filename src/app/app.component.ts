@@ -67,6 +67,7 @@ export class AppComponent implements OnInit {
     });
 
     this.client.on(ClientEvent.RemoteStreamSubscribed, evt => {
+      console.log('remoteCalls',this.remoteCalls)
       const stream = evt.stream as Stream;
       const id = this.getRemoteId(stream);
       if (!this.remoteCalls.length) {
