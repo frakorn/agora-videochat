@@ -70,6 +70,7 @@ export class AppComponent implements OnInit {
       const stream = evt.stream as Stream;
       const id = this.getRemoteId(stream);
       if (!this.remoteCalls.length) {
+        console.log('remoteCalls',this.remoteCalls)
         this.remoteCalls.push(id);
         setTimeout(() => stream.play(id), 1000);
       }
